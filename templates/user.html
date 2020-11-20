@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %} --继承基模板
+{% block footer %} --调用基模板的借口
+
+
+change myself --显示自己的内容
+{{ super() }} --然后再加载基模板的内容
+
+{% endblock %}
+
+{#<script>#}
+{#    {{ super() }}#}
+{#    {{ moment.include_moment() }}#}
+{#</script>#}
+{##}
+{#<p>lll {{ moment(current_time).format('LLL') }}</p>#}
+{#<p>222 {{ moment(current_time).fromNow(refresh=True) }}</p>#}
+{##}
+{#</body>#}
+{#</html>#}
+
+
+

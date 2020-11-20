@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>IP查询</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="提供免费的IP查询服务,命令行查询IP"/>
+    <meta name="keywords" content="IP, 查IP, IP查询"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <link href="{{ url_for('static',filename='styles.min.css') }}" rel="stylesheet"/>
+    <script type="text/javascript" src="/static/js.min.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="page">
+        <div class="logo">
+            <h1>
+                <strong>多平台的命令行IP查询</strong>
+                <a href="/" title="手机, 命令行IP查询">
+                    <!--<img src="/static/img/tree.png" alt="手机, 命令行IP查询"/>-->
+                    <img src="/static/img/15923655371287.png" alt="手机, 命令行IP查询"/>
+
+                </a>
+            </h1>
+        </div>
+        <div class="search">
+            <form action="/" onsubmit="return query();">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td style=" width: 75%; ">
+                            <input id="data-input" placeholder="请输入要查询的 IP 地址" size="26" type="text"/>
+                        </td>
+                        <td>
+                            <input id="data-submit" type="submit" class="kq-button" value="查询"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="data kq-well">
+				<pre>IP	: {{ dic.ip }}
+地址	: {{ dic.add }}
+运营商	: {{ dic.isp }}
+
+数据二	: {{ dic.data2 }}
+
+</pre>
+        </div>
+        <div class="kq-well">
+            <div class="cmd-title">
+                <strong>命令行查询(详细):</strong>
+            </div>
+            <div class="sys-cmd">
+                <ul>
+                    <li>
+                        UNIX/Linux: <span><code>#curl ip.16yang.cn</code></span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="cmd-title">
+                <strong>命令行查询(纯ip):</strong>
+            </div>
+
+
+            <div class="sys-cmd">
+                <ul>
+                    <li>
+                        UNIX/Linux: <span><code>#curl ip.16yang.cn/ip</code></span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="links">
+            <ul>
+                <li>
+                    <a href="" title="博客" target="_blank"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+
