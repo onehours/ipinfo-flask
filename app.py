@@ -7,8 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    print(request.environ)
-    print(request.remote_addr)
+    #print(request.remote_addr)
     if request.environ.get('HTTP_X_FORWARDED_FOR') is None:
             ip = request.environ['REMOTE_ADDR']
     else:
@@ -16,10 +15,8 @@ def index():
     if not ip:
         ip = '223.5.5.5'
     ip_dict = ip2.ip2region(ip)
-    print(ip_dict)
     czip = qqwry.CzIp()
     ip_dict2 = czip.getip(ip)
-    print(ip_dict2)
     if 'curl' in request.environ.get('HTTP_USER_AGENT'):
         msg = f"""IP	: {ip}
 地址    : {ip_dict['country']} | {ip_dict['region']}| {ip_dict['city']}
