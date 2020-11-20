@@ -1,0 +1,11 @@
+version: '3.2'
+
+services:
+  ipinfo-flask:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: ipinfo-flask:1.4
+    container_name: ipinfo
+    ports:
+      - 8000:8000
