@@ -59,7 +59,6 @@ class RegexConverter(BaseConverter):
 app.url_map.converters['regex'] = RegexConverter
 
 
-# 匹配三位长度的字符串
 @app.route('/<regex("(\d+.\d+.\d+.\d+)"):ip>')
 def user(ip):
     if not ip:
